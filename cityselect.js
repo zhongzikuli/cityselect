@@ -12,8 +12,7 @@
     };
 
     function Cityselect(options) {
-        this.options = $.extend({},
-            defaults, options || {});
+        this.options = $.extend({}, defaults, options || {});
         initHtml(this.options);
         initEvent(this.options)
     }
@@ -29,8 +28,8 @@
         var winWidth = $(window).width();
         var html = '';
 
-        html += '<div class="province-wrapper"><div class="nav flex"><a tb="provinceAll" id="province-nav" class="current">省份</a><a tb="cityAll" id="city-nav">城市</a>' + '<a tb="countyAll" id="county-nav">区/县</a>' + '</div>';
-        html += '<div class="content"><div class="province-con flex"><div class="pre"></div><div class="list"><ul class="flex" id="province-ul"></ul></div><div class="next"></div>' + '</div>' + '<div class="city-con flex">' + '<div class="pre"></div>' + '<div class="list"><ul class="flex" id="city-ul"></ul></div>' + '<div class="next"></div>' + '</div>' + '<div class="county-con flex">' + '<div class="pre"></div>' + '<div class="list"><ul class="flex" id="county-ul"></ul></div>' + '<div class="next"></div>' + '</div></div></div>';
+        html += '<div class="province-wrapper"><div class="nav flex"><a tb="provinceAll" id="province-nav" class="current">省份</a><a tb="cityAll" id="city-nav">城市</a><a tb="countyAll" id="county-nav">区/县</a></div>';
+        html += '<div class="content"><div class="province-con flex"><div class="pre"></div><div class="list"><ul id="province-ul"></ul></div><div class="next"></div></div><div class="city-con flex"><div class="pre"></div><div class="list"><ul id="city-ul"></ul></div><div class="next"></div></div><div class="county-con flex"><div class="pre"></div><div class="list"><ul id="county-ul"></ul></div><div class="next"></div></div></div></div>';
         $("body").append(html);
         if (!provinceCityCounty) {
             $(".province-wrapper a").css('width', '50%');
@@ -54,10 +53,8 @@
             getAllCity();
         }
 
-        if (!provinceCityCounty) {
-            if (!allCounty) {
-                getAllCounty();
-            }
+        if (!allCounty) {
+            getAllCounty();
         }
     }
 
@@ -179,7 +176,7 @@
     function viewCity(provinceId, el, provinceCityCounty) {
         $("#" + provinceId).addClass("current").siblings("li").removeClass("current");
         $("#city-nav").addClass("current").siblings("a").removeClass("current");
-        $(".province-wrapper .content .city-con").show().siblings().hide();
+        $(".province-wrapper .city-con").show().siblings().hide();
         cityPage(provinceId, 1, el, provinceCityCounty);
     }
 
@@ -228,12 +225,12 @@
         allCounty = allCountyMap.get(cityId);
         var totalPage = Math.ceil(allCounty.length / pageSize);
         if (totalPage > 1) {
-            if (currentProvincePage == 1) {
+            if (currentCountyPage == 1) {
                 $(".county-con .next").addClass("can");
                 $(".county-con .next.can").click(function () {
-                    countyPage(ccityId, urrentCountyPage + 1, el)
+                    countyPage(cityId, currentCountyPage + 1, el)
                 });
-            } else if (currentProvincePage > 1 && currentProvincePage < totalPage) {
+            } else if (currentCountyPage > 1 && currentCountyPage < totalPage) {
                 $(".county-con .pre, .county-con .next").addClass("can");
                 $(".county-con .pre.can").click(function () {
                     countyPage(cityId, currentCountyPage - 1, el)
@@ -253,7 +250,7 @@
         if (currentCountyPage == totalPage) {
             end = allCounty.length;
         }
-        buildList(start, end, null, "county", cityAllCounty)
+        buildList(start, end, el, null, "county", allCounty)
     }
 
     function viewAll(countyId, el, provinceCityCounty) {
