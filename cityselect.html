@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="cityselect.css">
+</head>
+<body>
+<label for="city">城市:</label>
+<input type="text" id="city">
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="cityselect.js"></script>
+<script>
+    $(document).ready(function () {
+        new Cityselect({
+            el: "#city"
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body .flex {
+  display: flex;
+}
+body .province-wrapper {
+  display: none;
+  position: absolute;
+  width: 306px;
+}
+body .province-wrapper .nav {
+  justify-content: space-between;
+  color: #fff;
+}
+body .province-wrapper .nav a {
+  flex: 1;
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+  border-right: 1px solid #fff;
+  cursor: pointer;
+  background: #a9a9a9;
+}
+body .province-wrapper .nav a:last-of-type {
+  border-right: none;
+}
+body .province-wrapper .nav a.current {
+  background: rgba(45, 162, 235, 0.8);
+}
+body .province-wrapper .content {
+  height: 110px;
+  border: 1px solid #a9a9a9;
+  border-top: none;
+  padding: 10px;
+}
+body .province-wrapper .content .province-con .pre,
+body .province-wrapper .content .city-con .pre,
+body .province-wrapper .content .county-con .pre,
+body .province-wrapper .content .province-con .next,
+body .province-wrapper .content .city-con .next,
+body .province-wrapper .content .county-con .next {
+  width: 29px;
+  height: 109px;
+  cursor: pointer;
+}
+body .province-wrapper .content .province-con .pre,
+body .province-wrapper .content .city-con .pre,
+body .province-wrapper .content .county-con .pre {
+  background: url(icon-arror.png) left center no-repeat;
+}
+body .province-wrapper .content .province-con .pre.can,
+body .province-wrapper .content .city-con .pre.can,
+body .province-wrapper .content .county-con .pre.can {
+  background: url(icon-arror.png) -87px center no-repeat;
+}
+body .province-wrapper .content .province-con .next,
+body .province-wrapper .content .city-con .next,
+body .province-wrapper .content .county-con .next {
+  background: url(icon-arror.png) -58px center no-repeat;
+}
+body .province-wrapper .content .province-con .next.can,
+body .province-wrapper .content .city-con .next.can,
+body .province-wrapper .content .county-con .next.can {
+  background: url(icon-arror.png) -29px center no-repeat;
+}
+body .province-wrapper .content .province-con .list,
+body .province-wrapper .content .city-con .list,
+body .province-wrapper .content .county-con .list {
+  flex: 1;
+}
+body .province-wrapper .content .province-con .list ul,
+body .province-wrapper .content .city-con .list ul,
+body .province-wrapper .content .county-con .list ul {
+  list-style: none;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body .province-wrapper .content .province-con .list ul li,
+body .province-wrapper .content .city-con .list ul li,
+body .province-wrapper .content .county-con .list ul li {
+  width: 33.3%;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  cursor: pointer;
+}
+body .province-wrapper .content .province-con .list ul li:hover,
+body .province-wrapper .content .city-con .list ul li:hover,
+body .province-wrapper .content .county-con .list ul li:hover,
+body .province-wrapper .content .province-con .list ul li:visited,
+body .province-wrapper .content .city-con .list ul li:visited,
+body .province-wrapper .content .county-con .list ul li:visited {
+  color: #aaa;
+}
+/*# sourceMappingURL=cityselect.css.mapp */
