@@ -5,3 +5,4 @@
 ### el 是Dom节点，可以是class和id，必须有；
 ### provinceCityCounty是boolean类型，默认true,是省市区三级，false是省市二级；
 ### direction 组件框对齐方式，string类型，默认left左对齐， right是右对齐；
+### callback 城市选择之后的回调
