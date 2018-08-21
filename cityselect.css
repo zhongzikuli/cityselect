@@ -102,6 +102,13 @@ body .province-wrapper .content .county-con .list ul li {
     line-height: 27px;
     text-align: center;
     cursor: pointer;
+    font-size: 14px;
+}
+
+body .province-wrapper .content .province-con .list ul .current,
+body .province-wrapper .content .city-con .list ul .current,
+body .province-wrapper .content .county-con .list ul .current {
+    color: rgba(45, 162, 235, 0.8);
 }
 
 body .province-wrapper .content .province-con .list ul li:hover,
@@ -113,4 +120,3 @@ body .province-wrapper .content .county-con .list ul li:visited {
     color: #aaa;
 }
 
-/*# sourceMappingURL=cityselect.css.mapp */
